@@ -1,0 +1,27 @@
+function removeNullAndUndefined(obj) {
+    // ایجاد یک شیء جدید برای ذخیره properties معتبر
+    const cleanedObj = {};
+
+    // پیمایش بر روی properties شیء ورودی
+    for (const key in obj) {
+        // بررسی اینکه آیا مقدار property null یا undefined نیست
+        if (obj[key] !== null && obj[key] !== undefined) {
+            // اگر معتبر بود، آن را به شیء جدید اضافه کن
+            cleanedObj[key] = obj[key];
+        }
+    }
+
+    return cleanedObj;
+}
+
+// مثال استفاده
+const originalObject = {
+    name: "Alice",
+    age: null,
+    email: "alice@example.com",
+    address: undefined,
+    phone: "123-456-7890"
+};
+
+const cleanedObject = removeNullAndUndefined(originalObject);
+console.log(cleanedObject);
