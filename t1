@@ -1,0 +1,36 @@
+// تعریف شیء orders
+const orders = {
+    book: {
+        name: "JavaScript Basics",
+        model: "JS-101",
+        price: 30,
+        count: 2
+    },
+    pen: {
+        name: "Ballpoint Pen",
+        model: "BP-202",
+        price: 2,
+        count: 5
+    },
+    laptop: {
+        name: "Gaming Laptop",
+        model: "GL-303",
+        price: 1200,
+        count: 1
+    }
+};
+
+// افزایش قیمت هر کدام به میزان 10 واحد
+for (let item in orders) {
+    orders[item].price += 10;
+}
+
+// محاسبه مبلغ کل خرید
+let totalPrice = 0;
+
+for (let item in orders) {
+    totalPrice += orders[item].price * orders[item].count;
+}
+
+// چاپ مبلغ کل خرید
+console.log("مبلغ کل خرید:", totalPrice);
